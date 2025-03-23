@@ -6,6 +6,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    public function boot()
+    {
+        Schema::defaultStringLength(191);
+    }
+        
     /**
      * Run the migrations.
      */

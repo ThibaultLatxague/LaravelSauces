@@ -12,8 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sauces', function (Blueprint $table) {
-            $table->id();
+            $table->string('userId')->unqiue();
             $table->timestamps();
+            $table->string('name');
+            $table->string('manufacturer');
+            $table->string('description');
+            $table->string('mainPepper');
+            $table->string('imageUrl');
+            $table->integer('heat');
+            $table->integer('likes');
+            $table->integer('dislikes');
+            $table->json('usersLiked');
+            $table->json('usersDisliked');
         });
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Sauce;
 
 class SauceController extends Controller
 {
@@ -11,7 +12,8 @@ class SauceController extends Controller
      */
     public function index()
     {
-        return view('sauce.afficher');
+        $sauces = Sauce::all();
+        return view('sauce.afficher', compact('sauces'));
     }
 
     /**
